@@ -1,9 +1,12 @@
 
 public class TrueFalseQuestion implements Question{
 	private String question;
-	private char answer;
-	public TrueFalseQuestion(String question, char answer){
+	private String[] answer;
+	private String[] choices;
+	
+	public TrueFalseQuestion(String question, String[] choices,String[] answer){
 		setQuestion(question);
+		setChoices(choices);
 		setAnswer(answer);
 	}
 	@Override
@@ -15,11 +18,20 @@ public class TrueFalseQuestion implements Question{
 		return this.question;
 	}
 	@Override
-	public void setAnswer(char answer) {
+	public void setAnswer(String[] answer) {
 		this.answer=answer;
 	}
 	@Override
-	public char getAnswer() {
-		return answer;
+	public String[] getAnswer() {
+		return this.answer;
+	}
+	@Override
+	public void setChoices(String[] choices) {
+		this.choices=choices;
+		
+	}
+	@Override
+	public String[] getChoices() {
+		return this.choices;
 	}
 }

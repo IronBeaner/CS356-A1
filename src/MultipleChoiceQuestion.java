@@ -1,9 +1,12 @@
 
 public class MultipleChoiceQuestion implements Question{
 	private String question;
-	private char answer;
-	public MultipleChoiceQuestion(String question, char answer){
+	private String[] choices;
+	private String[] answer;
+	public MultipleChoiceQuestion(String question, String[] choices, String[] answer){
+		InputFormatting format=new InputFormatting();
 		setQuestion(question);
+		setChoices(choices);
 		setAnswer(answer);
 	}
 	@Override
@@ -15,11 +18,20 @@ public class MultipleChoiceQuestion implements Question{
 		return this.question;
 	}
 	@Override
-	public void setAnswer(char answer) {
-		this.answer=answer;
+	public void setAnswer(String[] answer2) {
+		this.answer=answer2;
 	}
 	@Override
-	public char getAnswer() {
+	public String[] getAnswer() {
 		return this.answer;
+	}
+	@Override
+	public void setChoices(String[] choices) {
+		this.choices=choices;
+		
+	}
+	@Override
+	public String[] getChoices() {
+		return this.choices;
 	}
 }
